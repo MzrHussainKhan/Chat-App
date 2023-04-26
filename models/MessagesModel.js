@@ -8,7 +8,7 @@ const messagesSchemas = new mongoose.Schema(
     },
     sender: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Users',
+      ref: 'DM',
     },
     DMId: {
       type: mongoose.Schema.Types.ObjectId,

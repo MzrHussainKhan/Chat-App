@@ -16,11 +16,18 @@ const DmServices = {
         secondUser,
       });
 
-      //   if (data) {
-      //     const newMessage = await Messages.create({ content: 'Hello world' });
-      //     const sender = await Messages.create({}).populate('sender');
-      //     console.log(sender);
-      //   }
+      if (data) {
+        const id = data.id;
+        // console.log(id);
+        const newMessage = await Messages.create({
+          content: req.body.content,
+          DMId: id,
+          sender: firstUser,
+        });
+        console.log(newMessage);
+        // const sender = await Messages.create({}).populate('sender');
+        // console.log(sender);
+      }
 
       return data;
     } catch (err) {
